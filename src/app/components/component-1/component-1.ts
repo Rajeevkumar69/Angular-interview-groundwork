@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../shared/services/api-service';
 import { CommonModule } from '@angular/common';
+import { HighlightDirective } from '../../shared/directives';
 
 @Component({
      selector: 'app-component-1',
-     imports: [CommonModule],
+     imports: [CommonModule, HighlightDirective],
      templateUrl: './component-1.html',
      styleUrl: './component-1.scss'
 })
