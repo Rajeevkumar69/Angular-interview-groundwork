@@ -1,0 +1,43 @@
+<div class="container-fluid px-2 py-3 overflow-hidden">
+     <div class="row mb-3">
+          <div class="col-12 col-md-12 justify-content-center d-flex">
+               <h3>User Details</h3>
+          </div>
+     </div>
+     <div class="row">
+          <div class="col-12 col-md-12">
+               <div class="table-responsive">
+                    <table class="table table-hover">
+                         <thead>
+                              <tr>
+                                   <th>ID</th>
+                                   <th>Name</th>
+                                   <th>User Name</th>
+                                   <th>Email</th>
+                                   <th>Address</th>
+                                   <th>Phone</th>
+                                   <th>Website</th>
+                                   <th>Company</th>
+                              </tr>
+                         </thead>
+                         <tbody>
+                              <ng-container *ngIf="userData">
+                                   <ng-container *ngFor="let data of userData">
+                                        <tr>
+                                             <td> {{data.id}} </td>
+                                             <td> {{data.name}} </td>
+                                             <td> {{data.username}} </td>
+                                             <td> {{data.email}} </td>
+                                             <td> {{data.address.city}} </td>
+                                             <td> {{data.phone}} </td>
+                                             <td> {{data.website}} </td>
+                                             <td> {{data.company.name}} </td>
+                                        </tr>
+                                   </ng-container>
+                              </ng-container>
+                         </tbody>
+                    </table>
+               </div>
+          </div>
+     </div>
+</div>
