@@ -9,7 +9,7 @@ export class SharedService {
      userData$ = this.userData.asObservable();
 
      public updateUserData(data: string) {
-          localStorage.setItem('userData', data);
           this.userData.next(data);
+          localStorage.setItem('userData', data);
      }
 }
