@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { AuthGuard } from './shared/guard/auth/guard-guard';
 
 export const routes: Routes = [
     {
@@ -26,15 +25,19 @@ export const routes: Routes = [
     },
     {
         path: 'component-5',
-        loadComponent: () => import('./components/components-5/components-5').then(com => com.Components5)
+        loadComponent: () => import('./components/component-5/components-5').then(com => com.Components5)
     },
     {
         path:'component-6',
-        loadComponent: () => import('./components/components-6/components-6').then(com => com.Components6)
+        loadComponent: () => import('./components/component-6/components-6').then(com => com.Components6)
     },
     {
         path:'component-7',
         loadComponent:()=> import('./components/component-7/component-7').then(com => com.Component7)
+    },
+    {
+        path:'component-8',
+        loadComponent:()=> import('./components/component-8/component-8').then(com =>com.Component8)
     }
 
 ];
