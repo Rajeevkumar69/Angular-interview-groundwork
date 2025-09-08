@@ -9,7 +9,7 @@ export class SharedService {
      userData$ = this.userData.asObservable();
 
      /*
-     !Observables are for async data streams (like API, events). Subjects are for multicasting data between parts of the app (like component communication).
+     ^ Observables are for async data streams (like API, events). Subjects are for multicasting data between parts of the app (like component communication).
      */
      public updateUserData(data: string) {
           this.userData.next(data);
