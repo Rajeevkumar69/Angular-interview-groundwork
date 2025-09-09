@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../shared/services/api-service';
 import { CommonModule } from '@angular/common';
-import { HighlightDirective } from '../../shared/directives';
+import { HighlightDirective } from '../../shared/directives/directives';
 
 @Component({
      selector: 'app-component-1',
