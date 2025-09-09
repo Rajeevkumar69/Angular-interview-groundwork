@@ -39,6 +39,7 @@ export class Component12 implements OnInit {
                     next: ((res) => {
                          if (res) {
                               this.userDetails = res;
+                              this.userNameForm.reset();
                               resolve(res);
                          }
                     }),
