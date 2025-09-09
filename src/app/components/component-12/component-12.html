@@ -1,1 +1,52 @@
-<p>component-12 works!</p>
+<div class="container-fluid py-2 px-3">
+     <div class="row">
+          <div class="col-12 col-md-12 d-flex justify-content-center ">
+               <h3>Github User Details</h3>
+          </div>
+     </div>
+     <div class="row mt-2 mb-3">
+          <div class="col-12 col-md-6 d-flex justify-content-center align-items-center mt-4">
+               <form [formGroup]="userNameForm" (ngSubmit)="submit()" class="d-flex gap-2">
+                    <input type="text" placeholder="Search GitHub User" formControlName="userName" class="form-control">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                         Search
+                    </button>
+               </form>
+          </div>
+     </div>
+     <div class="row mt-4" *ngIf="userDetails">
+          <div class="col-12 d-flex justify-content-center mb-3">
+               <img [src]="userDetails.avatar_url" alt="userImage" class="rounded-circle border border-2"
+                    style="width: 120px; height: 120px;">
+          </div>
+
+          <div class="col-12 text-center mb-2">
+               <h2>Name:- {{userDetails.name}}</h2>
+               <h4 style="color: rgb(194, 190, 190);" >{{ userDetails.login }}</h4>
+
+               <p>
+                   {{userDetails.bio}}
+               </p>
+          </div>
+
+          <div class="col-12 d-flex justify-content-around flex-wrap">
+               <div class="p-2">
+                    <strong>Followers:</strong> {{ userDetails.followers }}
+               </div>
+               <div class="p-2">
+                    <strong>Following:</strong> {{ userDetails.following }}
+               </div>
+               <div class="p-2">
+                    <strong>Public Repos:</strong> {{ userDetails.public_repos }}
+               </div>
+          </div>
+
+          <div class="col-12 text-center mt-2">
+               <small>Organizations URL:
+                    <a [href]="userDetails.organizations_url" target="_blank">
+                         {{ userDetails.organizations_url }}
+                    </a>
+               </small>
+          </div>
+     </div>
+</div>

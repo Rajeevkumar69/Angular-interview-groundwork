@@ -11,4 +11,9 @@ export class ApiService {
           const url = `https://jsonplaceholder.typicode.com/users`;
           return this._http.get(url);
      }
+
+     public fetchGithubUserDetails(username: string) {
+          const url = `https://api.github.com/users/${username}`;
+          return this._http.get<any>(url);
+     }
 }
