@@ -1,17 +1,18 @@
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
-@Directive({
-     selector: '[appHighlight]'
-})
+@Directive({ selector: '[highlight]' })
 
 export class HighlightDirective {
-     constructor(private el: ElementRef, private renderer: Renderer2) { }
+     constructor(
+          private el:ElementRef,
+          private render:Renderer2
+     ) { }
 
-     @HostListener('mouseenter') onMouseEnter() {
-          this.renderer.setStyle(this.el.nativeElement, 'background', 'yellow');
+     @HostListener('mouseenter') onMouseEnter(){
+          this.render.setStyle(this.el.nativeElement,'background', 'yellow')
      }
 
-     @HostListener('mouseleave') onMouseLeave() {
-          this.renderer.removeStyle(this.el.nativeElement, 'background');
+     @HostListener('mouseleave') onMouseLeave(){
+          this.render.setStyle(this.el.nativeElement,'background', 'white')
      }
 }
