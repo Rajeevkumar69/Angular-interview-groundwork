@@ -22,16 +22,16 @@
                          </thead>
                          <tbody>
                               <ng-container *ngIf="userData">
-                                   <ng-container *ngFor="let data of userData">
+                                   <ng-container *ngFor="let data of paginatedData">
                                         <tr>
-                                             <td> {{data.id}} </td>
-                                             <td> {{data.name}} </td>
-                                             <td> {{data.username}} </td>
-                                             <td> {{data.email}} </td>
-                                             <td> {{data.address.city}} </td>
-                                             <td> {{data.phone}} </td>
-                                             <td> {{data.website}} </td>
-                                             <td> {{data.company.name}} </td>
+                                             <td>{{ data.id }}</td>
+                                             <td>{{ data.name }}</td>
+                                             <td>{{ data.username }}</td>
+                                             <td>{{ data.email }}</td>
+                                             <td>{{ data.address.city }}</td>
+                                             <td>{{ data.phone }}</td>
+                                             <td>{{ data.website }}</td>
+                                             <td>{{ data.company.name }}</td>
                                         </tr>
                                    </ng-container>
                               </ng-container>
@@ -41,3 +41,6 @@
           </div>
      </div>
 </div>
+<app-pagination [totalItems]="userData?.length || 0" [pageSize]="pageSize" [currentPage]="currentPage"
+     (pageChange)="onPageChange($event)">
+</app-pagination>
