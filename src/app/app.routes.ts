@@ -38,6 +38,14 @@ export const routes: Routes = [
     {
         path:'component-8',
         loadComponent:()=> import('./components/component-8/component-8').then(com =>com.Component8)
+    },
+    {
+        path:'component-9',
+        loadComponent:()=> import('./components/component-9/component-9').then(com => com.Component9)
+    },
+    {
+        path:'component-10',
+        loadComponent:()=> import('./components/component-10/component-10').then(com => com.Component10)
     }
 
 ];
