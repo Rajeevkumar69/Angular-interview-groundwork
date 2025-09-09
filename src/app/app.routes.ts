@@ -46,6 +46,10 @@ export const routes: Routes = [
     {
         path:'component-10',
         loadComponent:()=> import('./components/component-10/component-10').then(com => com.Component10)
+    },
+    {
+        path:'component-11',
+        loadComponent:()=> import('./components/component-11/component-11').then(com =>com.Component11)
     }
 
 ];
